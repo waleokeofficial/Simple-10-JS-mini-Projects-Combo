@@ -1,23 +1,9 @@
-console.log(
-    "❤❤❤❤❤❤❤❤"
-);
+const btn = document.getElementById("btn");
 
-function createHeart(){
-    const heart = document.createElement("div");
-    heart.classList.add("heart");
+btn.addEventListener("click", ()=> {
+    document.body.style.background = randomBg();
+})
 
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.animationDuration = Math.random() * 2 + 3 + "s";
-
-
-    heart.innerText = "❤";
-
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 5000);
+function randomBg(){
+    return `hsl(${Math.floor(Math.random() * 360)}, 100%, 50%)`
 }
-
-
-setInterval(createHeart, 300);
